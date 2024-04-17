@@ -6,6 +6,16 @@ import { useSession } from "next-auth/react"
 import { useRouter, useSearchParams } from "next/navigation"
 
 import Form from "@components/Form"
+import { Suspense } from 'react';
+
+
+function UpdatePromptPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <UpdatePrompt />
+        </Suspense>
+    );
+}
 
 const UpdatePrompt = () => {
     const router = useRouter();
@@ -68,4 +78,4 @@ const UpdatePrompt = () => {
     )
 }
 
-export default UpdatePrompt
+export default UpdatePromptPage
